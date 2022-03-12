@@ -16,10 +16,7 @@ const typeDefs = gql`
     }
 `;
 
-const loadData = (url) => {
-    return fetch(url)
-        .then((res) => res.json());
-}
+const loadData = (url) => fetch(url).then((res) => res.json());
 
 const resolvers = {
     Query: {
@@ -27,7 +24,7 @@ const resolvers = {
             const url = new URL(todosUrl);
             url.searchParams.append('_start', start);
             url.searchParams.append('_limit', limit);
-            loadData(url).then((result) => result)
+            return loadData(url).then((result) => result);
         },
         todo: (obj, { id }) => loadData(`${todosUrl}/${id}`)
             .then((result) => result),
