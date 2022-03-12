@@ -1,0 +1,16 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Anna <aik303030@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apollo-server": "^3.6.3",
+    "graphql": "^16.3.0",
+    "node-fetch": "^3.2.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
